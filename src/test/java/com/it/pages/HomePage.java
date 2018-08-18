@@ -11,6 +11,13 @@ public class HomePage extends BasePage {
 
 
     public String getLabelUserEmail() {
+       driver.scrollDown();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.scrollUp();
         return labelUserEmail.getText();
     }
 }

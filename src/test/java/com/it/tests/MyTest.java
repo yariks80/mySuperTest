@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 public class MyTest extends BaseTest {
     @Test
     public void test1() {
+
         UserFactory.getRandomUsers(10)
                 .forEach(System.out::println);
         app.login.login(validUser.getLogin(),validUser.getPassword());

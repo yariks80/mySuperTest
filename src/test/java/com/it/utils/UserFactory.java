@@ -5,8 +5,6 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.it.utils.RandomUtils.getRandomString;
-
 public class UserFactory {
     private static ResourceBundle bundle = ResourceBundle.getBundle("user");
 
@@ -17,9 +15,9 @@ public class UserFactory {
     }
     public static List<User> getRandomUsers(int count){
         return Stream.generate(()-> new User(
-                getRandomString(10),
-                getRandomString(12),
-                getRandomString(8)+"@i.ua"))
+                RandomUtils.getRandomString(10),
+                RandomUtils.getRandomString(12),
+                RandomUtils.getRandomString(8)+"@i.ua"))
                 .limit(count)
                 .collect(Collectors.toList());
     }
